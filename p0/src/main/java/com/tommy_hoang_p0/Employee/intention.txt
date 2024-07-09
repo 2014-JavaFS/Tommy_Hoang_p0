@@ -1,0 +1,7 @@
+Management: 
+     - View, Edit, Delete Inventory & Orders
+     - View, Edit, Delete Employees
+Sales:
+     - View or Delete Inventory
+     - View, Edit/Create, Delete Orders
+     - View, Edit Client Data
