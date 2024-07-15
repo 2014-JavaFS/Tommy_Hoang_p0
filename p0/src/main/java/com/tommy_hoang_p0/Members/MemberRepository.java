@@ -9,7 +9,10 @@ import java.util.List;
 import com.tommy_hoang_p0.Util.ConnectionFactory;
 import com.tommy_hoang_p0.Util.Interfaces.Crudable;
 
+
+
 public class MemberRepository implements Crudable<Member>{
+
      @Override
      public boolean update(Member member){
           return false; // Placeholder for actual database update.

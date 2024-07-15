@@ -6,4 +6,8 @@ public class MemberController {
      public MemberController(MemberService memberService) {
           this.memberService = memberService;
      }
+
+     public Member findById(int memberId) {
+          return memberService.findById(memberId);
+     }
 }

@@ -1,3 +1,0 @@
-This folder handles the inventory of the car dealership, 
-including orders for cars not in the current inventory
-ArrayList
