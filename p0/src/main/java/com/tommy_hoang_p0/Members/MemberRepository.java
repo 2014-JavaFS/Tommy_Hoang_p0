@@ -36,14 +36,13 @@ public class MemberRepository implements Crudable<Member>{
           return null;
      }
      @Override
-     public Member findById(int id){
-          // Placeholder for actual database query.
-          return null;
-     }
+     public Member findById(int number) {
+        return null;
+    }
 
      public Member findByEmailAndPassword(String email, String password) {
           try (Connection conn = ConnectionFactory.getConnectionFactory().getConnection()) {
-               String sql = "SELECT * FROM members WHERE email = ? AND password = ?";
+               String sql = "SELECT * FROM p0_members WHERE email = ? AND password = ?";
                try (PreparedStatement pst = conn.prepareStatement(sql)) {
                     pst.setString(1, email);
                     pst.setString(2, password);
@@ -58,10 +57,7 @@ public class MemberRepository implements Crudable<Member>{
                          member.setType(rs.getString("member_type"));
                          member.setFirstName(rs.getString("first_name"));
                          member.setLastName(rs.getString("last_name"));
-                         member.setEmail(rs.getString("email"));
                          member.setPhoneNumber(rs.getString("phone_number"));
-                         member.setPassword(rs.getString("password"));
-                         member.setStreet_address(rs.getString("street_address"));
 
                          return member;
                     }

@@ -1,7 +1,7 @@
 package com.tommy_hoang_p0.Inventory.Orders;
 
 public class Order {
-     private int id_order;
+     private int id_inventory;
      private String make;
      private String model;
      private String year;
@@ -17,7 +17,7 @@ public class Order {
           this.quantity = quantity;
      }
      public int getId() {
-          return id_order;
+          return id_inventory;
      }
      public String getMake() {
           return make;
@@ -37,8 +37,8 @@ public class Order {
      public short getQuantity() {
           return quantity;
      }
-     public void setId(int id_order) {
-          this.id_order = id_order;
+     public void setId(int id_inventory) {
+          this.id_inventory = id_inventory;
      }
      public void setMake(String make) {
           this.make = make;
@@ -61,8 +61,8 @@ public class Order {
      
      @Override
      public String toString() {
-          return "Order{" +
-                  "id_order=" + id_order +
+          return "Inventory{" +
+                  "id_inventory=" + id_inventory +
                   ", make='" + make + '\'' +
                   ", model='" + model + '\'' +
                   ", year='" + year + '\'' +

@@ -6,7 +6,6 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.tommy_hoang_p0.Util.Exceptions.DataNotFoundException;
 import com.tommy_hoang_p0.Util.Interfaces.Serviceable;
 
 public class MemberService implements Serviceable<Member> {
@@ -42,25 +41,16 @@ public class MemberService implements Serviceable<Member> {
       * @return
       */
      public Member findByEmailAndPassword(String email, String password) {
-          for (Member member : memberList) {
-               if (member.getEmail().equals(email) && member.getPassword().equals(password)) {
-                    return member;
-               }
-          }
-          return null;
+          return memberRepository.findByEmailAndPassword(email, password);
      }
 
      public void update(Member updatedMember) {
-          try {
-               int index = memberList.indexOf(findById(updatedMember.getMemberId()));
-               if (index != -1) {
-                    memberList.set(index, updatedMember);
-               } else {
-                    throw new DataNotFoundException("Member not found");
+          for(int i = 0; i < memberList.size(); i++) {
+               if(memberList.get(i).getMemberId() == updatedMember.getMemberId()) {
+                    memberList.set(i, updatedMember);
+                    return;
                }
-     } catch (DataNotFoundException e) {
-          throw new RuntimeException(e);
+          }
      }
-}
 
 }

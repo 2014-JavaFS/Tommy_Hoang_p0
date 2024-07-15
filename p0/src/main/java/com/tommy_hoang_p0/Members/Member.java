@@ -23,7 +23,7 @@ public class Member {
           this.lastName = lastName;
           this.email = email;
           this.phoneNumber = phoneNumber;
-          this.password = password; // Placeholder for hashed password.
+          this.password = password;
           this.street_address = street_address;
      }
      public int getMemberId() {
