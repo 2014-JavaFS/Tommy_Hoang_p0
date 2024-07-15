@@ -1,5 +1,5 @@
 package com.tommy_hoang_p0.Inventory.Orders;
 
-public class OrdersService {
+public class OrderRepository {
      
 }

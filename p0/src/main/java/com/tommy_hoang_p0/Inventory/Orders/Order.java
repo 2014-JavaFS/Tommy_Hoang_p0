@@ -1,14 +1,14 @@
 package com.tommy_hoang_p0.Inventory.Orders;
 
-public class Orders {
-     private int id_inventory;
+public class Order {
+     private int id_order;
      private String make;
      private String model;
      private String year;
      private String color;
      private String trim;
      private short quantity;
-     public Orders(String make, String model, String year, short quantity, String trim, String color) {
+     public Order(String make, String model, String year, short quantity, String trim, String color) {
           this.make = make;
           this.model = model;
           this.year = year;
@@ -17,7 +17,7 @@ public class Orders {
           this.quantity = quantity;
      }
      public int getId() {
-          return id_inventory;
+          return id_order;
      }
      public String getMake() {
           return make;
@@ -37,8 +37,8 @@ public class Orders {
      public short getQuantity() {
           return quantity;
      }
-     public void setId(int id_inventory) {
-          this.id_inventory = id_inventory;
+     public void setId(int id_order) {
+          this.id_order = id_order;
      }
      public void setMake(String make) {
           this.make = make;
@@ -61,8 +61,8 @@ public class Orders {
      
      @Override
      public String toString() {
-          return "Inventory{" +
-                  "id_inventory=" + id_inventory +
+          return "Order{" +
+                  "id_order=" + id_order +
                   ", make='" + make + '\'' +
                   ", model='" + model + '\'' +
                   ", year='" + year + '\'' +

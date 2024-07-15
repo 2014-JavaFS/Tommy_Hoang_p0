@@ -7,7 +7,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class ConnectionFactory {
+     private static final Logger logger = LoggerFactory.getLogger(ConnectionFactory.class);
      private static ConnectionFactory connectionFactory = new ConnectionFactory();
      private Properties properties = new Properties();
 
@@ -15,7 +19,7 @@ public class ConnectionFactory {
           try {
               properties.load(new FileReader("src/main/resources/db.properties"));
           } catch (IOException e) {
-               e.printStackTrace();
+               logger.error("Error loading database properties", e);
           }
      }
 
@@ -23,7 +27,7 @@ public class ConnectionFactory {
           try {
               Class.forName("org.postgresql.Driver");
           } catch (ClassNotFoundException e) {
-               e.printStackTrace();
+               logger.error("Error loading PostgreSQL JDBC driver", e);
           }
      }
 
@@ -37,7 +41,7 @@ public class ConnectionFactory {
                      properties.getProperty("user"), 
                      properties.getProperty("password"));
           } catch (SQLException e) {
-               e.printStackTrace();
+               logger.error("Error connecting to database", e);
                return null;
           }
      }

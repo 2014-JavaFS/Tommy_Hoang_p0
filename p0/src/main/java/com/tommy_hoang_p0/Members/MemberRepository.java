@@ -6,13 +6,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tommy_hoang_p0.Util.ConnectionFactory;
 import com.tommy_hoang_p0.Util.Interfaces.Crudable;
 
 
 
 public class MemberRepository implements Crudable<Member>{
-
+     private static final Logger logger = LoggerFactory.getLogger(MemberRepository.class);
      @Override
      public boolean update(Member member){
           return false; // Placeholder for actual database update.
@@ -64,7 +67,7 @@ public class MemberRepository implements Crudable<Member>{
                     }
                }
           } catch (SQLException e) {
-               e.printStackTrace();
+               logger.error("Error finding member by email and password", e);
                return null;
           }
      }

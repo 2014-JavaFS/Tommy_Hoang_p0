@@ -3,10 +3,14 @@ package com.tommy_hoang_p0.Members;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.tommy_hoang_p0.Util.Exceptions.DataNotFoundException;
 import com.tommy_hoang_p0.Util.Interfaces.Serviceable;
 
 public class MemberService implements Serviceable<Member> {
+     private static final Logger logger = LoggerFactory.getLogger(MemberService.class);
      private final List<Member> memberList = new ArrayList<>();
      private final MemberRepository memberRepository;
 
@@ -20,12 +24,9 @@ public class MemberService implements Serviceable<Member> {
      }
      @Override
      public Member findById(int memberId) {
-          for(Member member : memberList) {
-               if(member.getMemberId() == memberId){
-                    return member;
-               }
-          }
-          return null;
+          logger.info("Member ID was sent to service as {}", memberId);
+
+          return memberRepository.findById(memberId);
      }
      @Override
      public Member create(Member newMember) {
