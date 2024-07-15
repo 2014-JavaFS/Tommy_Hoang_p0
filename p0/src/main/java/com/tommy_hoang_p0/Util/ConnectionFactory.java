@@ -17,7 +17,7 @@ public class ConnectionFactory {
 
      private ConnectionFactory() {
           try {
-              properties.load(new FileReader("src/main/resources/db.properties"));
+              properties.load(new FileReader("p0/src/main/resources/db.properties"));
           } catch (IOException e) {
                logger.error("Error loading database properties", e);
           }
@@ -38,7 +38,7 @@ public class ConnectionFactory {
      public Connection getConnection(){
           try {
               return DriverManager.getConnection(properties.getProperty("url"), 
-                     properties.getProperty("user"), 
+                     properties.getProperty("username"), 
                      properties.getProperty("password"));
           } catch (SQLException e) {
                logger.error("Error connecting to database", e);

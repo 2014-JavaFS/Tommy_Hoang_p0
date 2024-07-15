@@ -42,7 +42,7 @@ public class MemberRepository implements Crudable<Member>{
 
      public Member findByEmailAndPassword(String email, String password) {
           try (Connection conn = ConnectionFactory.getConnectionFactory().getConnection()) {
-               String sql = "SELECT * FROM p0_members WHERE email = ? AND password = ?";
+               String sql = "SELECT * FROM tommy_hoang_p0.p0_members WHERE email = ? AND pwd = ?";
                try (PreparedStatement pst = conn.prepareStatement(sql)) {
                     pst.setString(1, email);
                     pst.setString(2, password);
@@ -53,7 +53,7 @@ public class MemberRepository implements Crudable<Member>{
                          }
 
                          Member member = new Member();
-                         member.setMemberId(rs.getInt("member_id"));
+                         member.setMemberId(rs.getInt("id_member"));
                          member.setType(rs.getString("member_type"));
                          member.setFirstName(rs.getString("first_name"));
                          member.setLastName(rs.getString("last_name"));
