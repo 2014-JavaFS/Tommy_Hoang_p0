@@ -32,9 +32,9 @@ create table tommy_hoang_p0.p0_orders(
 
 -- READ
 
-SELECT * FROM tommy_hoang_p0.p0_members;
-SELECT * FROM tommy_hoang_p0.p0_inventory;
-SELECT * FROM tommy_hoang_p0.p0_orders;
+select * from tommy_hoang_p0.p0_inventory;
+select * from tommy_hoang_p0.p0_orders;
+select * from tommy_hoang_p0.p0_members;
 
 -- INSERT INTO tommy_hoang_p0
 
@@ -47,6 +47,7 @@ VALUES
     (5, 'Nissan', 'Altima', 2010, 'BLU', 'SV');
 
 
+insert into tommy_hoang_p0.p0_clients (id_client);
 INSERT INTO tommy_hoang_p0.p0_inventory (id_car, car_make, car_model, car_year, car_color, car_trims, quantity)
 VALUES
 (1, 'Toyota', 'Camry', '2023', 'BLK', 'LE', 10),
@@ -99,6 +100,33 @@ VALUES
 (48, 'Nissan', 'Rogue', '2023', 'SIL', 'SV', 6),
 (49, 'Volkswagen', 'Tiguan', '2023', 'BLK', 'SE', 7),
 (50, 'Subaru', 'Forester', '2023', 'RED', 'Limited', 9);
+
+-- Insert 1 ADMIN member
+INSERT INTO tommy_hoang_p0.p0_members (member_type, first_name, last_name, email, phone_number, pwd, street_address)
+VALUES ('ADMIN', 'Admin', 'User', 'admin@example.com', '1234567890', 'adminpwd', '123 Admin St');
+
+-- Insert 2 EMPLOYEE members
+INSERT INTO tommy_hoang_p0.p0_members (member_type, first_name, last_name, email, phone_number, pwd, street_address)
+VALUES ('EMPLOYEE', 'Employee1', 'User', 'employee1@example.com', '9876543210', 'emp1pwd', '456 Employee St');
+
+INSERT INTO tommy_hoang_p0.p0_members (member_type, first_name, last_name, email, phone_number, pwd, street_address)
+VALUES ('EMPLOYEE', 'Employee2', 'User', 'employee2@example.com', '5555555555', 'emp2pwd', '789 Employee St');
+
+-- Insert 5 CUSTOMER members
+INSERT INTO tommy_hoang_p0.p0_members (first_name, last_name, email, phone_number, pwd, street_address)
+VALUES ('Customer1', 'User', 'customer1@example.com', '1111111111', 'cust1pwd', '101 Customer St');
+
+INSERT INTO tommy_hoang_p0.p0_members (first_name, last_name, email, phone_number, pwd, street_address)
+VALUES ('Customer2', 'User', 'customer2@example.com', '2222222222', 'cust2pwd', '202 Customer St');
+
+INSERT INTO tommy_hoang_p0.p0_members (first_name, last_name, email, phone_number, pwd, street_address)
+VALUES ('Customer3', 'User', 'customer3@example.com', '3333333333', 'cust3pwd', '303 Customer St');
+
+INSERT INTO tommy_hoang_p0.p0_members (first_name, last_name, email, phone_number, pwd, street_address)
+VALUES ('Customer4', 'User', 'customer4@example.com', '4444444444', 'cust4pwd', '404 Customer St');
+
+INSERT INTO tommy_hoang_p0.p0_members (first_name, last_name, email, phone_number, pwd, street_address)
+VALUES ('Customer5', 'User', 'customer5@example.com', '5555555555', 'cust5pwd', '505 Customer St');
 
 
 -- UPDATE INTO tommy_hoang_p0
