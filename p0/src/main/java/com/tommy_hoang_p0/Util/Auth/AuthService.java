@@ -2,21 +2,21 @@ package com.tommy_hoang_p0.Util.Auth;
 
 import javax.security.sasl.AuthenticationException;
 
-import com.tommy_hoang_p0.Employee.Employee;
-import com.tommy_hoang_p0.Employee.EmployeeService;
+import com.tommy_hoang_p0.Members.Member;
+import com.tommy_hoang_p0.Members.MemberService;
 
 public class AuthService {
      
-     private final EmployeeService employeeService;
+     private final MemberService memberService;
      
-     public AuthService(EmployeeService employeeService) {
-          this.employeeService = employeeService;
+     public AuthService(MemberService memberService) {
+          this.memberService = memberService;
      }
 
-     public Employee login(String email, String password) throws AuthenticationException {
-          Employee employee = employeeService.findByEmailAndPassword(email, password);
-          if(employee == null) throw new AuthenticationException("Invalid email or password.");
-          return employee;
+     public Member login(String email, String password) throws AuthenticationException {
+          Member member = memberService.findByEmailAndPassword(email, password);
+          if(member == null) throw new AuthenticationException("Invalid email or password.");
+          return member;
      }
      
 }
