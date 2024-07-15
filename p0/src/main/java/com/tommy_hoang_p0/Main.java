@@ -1,6 +1,5 @@
 package com.tommy_hoang_p0;
 
-import com.tommy_hoang_p0.Members.MemberController;
 import com.tommy_hoang_p0.Members.MemberRepository;
 import com.tommy_hoang_p0.Members.MemberService;
 import com.tommy_hoang_p0.Util.Auth.AuthController;
@@ -20,7 +19,6 @@ public class Main {
         //Member memberLoggedIn = null; // Storing the Users Session
         MemberRepository memberRepository = new MemberRepository();
         MemberService memberService = new MemberService(memberRepository);
-        MemberController memberController = new MemberController(memberService);
 
         AuthService authService = new AuthService(memberService);
         AuthController authController = new AuthController(authService);

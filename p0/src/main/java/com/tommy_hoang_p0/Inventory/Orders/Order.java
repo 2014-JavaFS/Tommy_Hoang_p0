@@ -1,74 +1,80 @@
 package com.tommy_hoang_p0.Inventory.Orders;
 
+import java.time.LocalDateTime;
+
+import com.tommy_hoang_p0.Inventory.VehicleDetails;
+
 public class Order {
-     private int id_inventory;
-     private String make;
-     private String model;
-     private String year;
-     private String color;
-     private String trim;
+     private int id_order;
+     private VehicleDetails vehicleDetails;
+     private String customer_name;
+     private String customer_phone;
+     private String customer_email;
+     private LocalDateTime edit_deadline;
+     private LocalDateTime delivery_date;
      private short quantity;
-     public Order(String make, String model, String year, short quantity, String trim, String color) {
-          this.make = make;
-          this.model = model;
-          this.year = year;
-          this.color = color;
-          this.trim = trim;
-          this.quantity = quantity;
+     
+     public Order(int id_order, VehicleDetails vehicleDetails, String customer_name, String customer_phone, String customer_email) {
+          this.id_order = id_order;
+          this.vehicleDetails = vehicleDetails;
+          this.customer_name = customer_name;
+          this.customer_phone = customer_phone;
+          this.customer_email = customer_email;
      }
-     public int getId() {
-          return id_inventory;
+     public int getOrderId() {
+          return id_order;
      }
-     public String getMake() {
-          return make;
+     public void setOrderId(int id_order) {
+          this.id_order = id_order;
      }
-     public String getModel() {
-          return model;
+
+     public VehicleDetails getVehicleDetails() {
+        return vehicleDetails;
      }
-     public String getYear() {
-          return year;
+     public void setVehicleDetails(VehicleDetails vehicleDetails) {
+        this.vehicleDetails = vehicleDetails;
      }
-     public String getColor() {
-          return color;
+
+     public String getCustomer_name() {
+        return customer_name;
      }
-     public String getTrim() {
-          return trim;
+     public void setCustomer_name(String customer_name) {
+        this.customer_name = customer_name;
+     }
+
+     public String getCustomer_phone() {
+        return customer_phone;
+     }
+     public void setCustomer_phone(String customer_phone) {
+        this.customer_phone = customer_phone;
+     }
+
+     public String getCustomer_email() {
+        return customer_email;
+     }
+     public void setCustomer_email(String customer_email) {
+        this.customer_email = customer_email;
+     }
+
+     public LocalDateTime getEdit_deadline() {
+          return edit_deadline;
+     }
+     public void setEdit_deadline(LocalDateTime edit_deadline) {
+          this.edit_deadline = edit_deadline;
+     }
+
+     public LocalDateTime getDelivery_date() {
+          return delivery_date;
+     }
+     public void setDelivery_date(LocalDateTime delivery_date) {
+          this.delivery_date = delivery_date;
      }
      public short getQuantity() {
           return quantity;
      }
-     public void setId(int id_inventory) {
-          this.id_inventory = id_inventory;
-     }
-     public void setMake(String make) {
-          this.make = make;
-     }
-     public void setModel(String model) {
-          this.model = model;
-     }
-     public void setYear(String year) {
-          this.year = year;
-     }
-     public void setColor(String color) {
-          this.color = color;
-     }
-     public void setTrim(String trim) {
-          this.trim = trim;
-     }
+
      public void setQuantity(short quantity) {
-          this.quantity = quantity;
+          this.quantity = 1;
      }
-     
-     @Override
-     public String toString() {
-          return "Inventory{" +
-                  "id_inventory=" + id_inventory +
-                  ", make='" + make + '\'' +
-                  ", model='" + model + '\'' +
-                  ", year='" + year + '\'' +
-                  ", color='" + color + '\'' +
-                  ", trim='" + trim + '\'' +
-                  ", quantity=" + quantity +
-                  '}';
-     }
+    
 }
