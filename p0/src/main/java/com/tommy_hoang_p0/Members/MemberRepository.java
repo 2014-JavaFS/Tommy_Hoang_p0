@@ -67,5 +67,4 @@ public class MemberRepository implements Crudable<Member>{
                return null;
           }
      }
-
 }

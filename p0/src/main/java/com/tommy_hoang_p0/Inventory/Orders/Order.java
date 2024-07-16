@@ -13,6 +13,8 @@ public class Order {
      private LocalDateTime edit_deadline;
      private LocalDateTime delivery_date;
      private short quantity;
+
+     public Order(){}
      
      public Order(int id_order, VehicleDetails vehicleDetails, String customer_name, String customer_phone, String customer_email) {
           this.id_order = id_order;
@@ -74,7 +76,21 @@ public class Order {
      }
 
      public void setQuantity(short quantity) {
-          this.quantity = 1;
+          this.quantity = quantity;
+     }
+
+     @Override
+     public String toString() {
+          return "Order{" +
+                  "id_order=" + id_order +
+                  ", vehicleDetails=" + vehicleDetails +
+                  ", customer_name='" + customer_name + '\'' +
+                  ", customer_phone='" + customer_phone + '\'' +
+                  ", customer_email='" + customer_email + '\'' +
+                  ", edit_deadline=" + edit_deadline +
+                  ", delivery_date=" + delivery_date +
+                  ", quantity=" + quantity +
+                  '}';
      }
     
 }
