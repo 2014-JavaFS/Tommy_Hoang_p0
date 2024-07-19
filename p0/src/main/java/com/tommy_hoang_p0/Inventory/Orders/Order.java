@@ -1,31 +1,30 @@
 package com.tommy_hoang_p0.Inventory.Orders;
 
-import java.time.LocalDateTime;
-
 import com.tommy_hoang_p0.Inventory.VehicleDetails;
 
 public class Order {
-     private int id_order;
+     private int order_id;
      private VehicleDetails vehicleDetails;
      private String customer_name;
      private String customer_phone;
      private String customer_email;
-     private LocalDateTime edit_deadline;
-     private LocalDateTime delivery_date;
      private short quantity;
      
-     public Order(int id_order, VehicleDetails vehicleDetails, String customer_name, String customer_phone, String customer_email) {
-          this.id_order = id_order;
+     public Order(){}
+     public Order(int order_id, VehicleDetails vehicleDetails, String customer_name, String customer_phone, String customer_email, short quantity) {
+          this.order_id = order_id;
           this.vehicleDetails = vehicleDetails;
           this.customer_name = customer_name;
           this.customer_phone = customer_phone;
           this.customer_email = customer_email;
+          this.quantity = quantity;
      }
+     
      public int getOrderId() {
-          return id_order;
+          return order_id;
      }
-     public void setOrderId(int id_order) {
-          this.id_order = id_order;
+     public void setOrderId(int order_id) {
+          this.order_id = order_id;
      }
 
      public VehicleDetails getVehicleDetails() {
@@ -56,25 +55,11 @@ public class Order {
         this.customer_email = customer_email;
      }
 
-     public LocalDateTime getEdit_deadline() {
-          return edit_deadline;
-     }
-     public void setEdit_deadline(LocalDateTime edit_deadline) {
-          this.edit_deadline = edit_deadline;
-     }
-
-     public LocalDateTime getDelivery_date() {
-          return delivery_date;
-     }
-     public void setDelivery_date(LocalDateTime delivery_date) {
-          this.delivery_date = delivery_date;
-     }
      public short getQuantity() {
           return quantity;
      }
-
      public void setQuantity(short quantity) {
-          this.quantity = 1;
+          this.quantity = quantity;
      }
     
 }

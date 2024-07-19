@@ -2,7 +2,7 @@ package com.tommy_hoang_p0.Util.Auth;
 
 import javax.security.sasl.AuthenticationException;
 
-import com.tommy_hoang_p0.Members.Member;
+import com.tommy_hoang_p0.Users.User;
 
 import io.javalin.Javalin;
 import io.javalin.http.Context;
@@ -17,18 +17,18 @@ public class AuthController {
     }
 
     public void registerPaths(Javalin app) {
-        app.post("/login", this::handlePostLogin);
+        app.post("/login", this::handleLogin);
         app.get("/user-info", this::handleUserInfo);
     }
 
-    private void handlePostLogin(Context ctx) {
+    private void handleLogin(Context ctx) {
         String email = ctx.queryParam("email");
         String password = ctx.queryParam("password");
 
         try {
-            Member member = authService.login(email, password);
-            ctx.header("memberId", String.valueOf(member.getMemberId()));
-            ctx.header("type", member.getType().name());
+            User user = authService.login(email, password);
+            ctx.header("userId", String.valueOf(user.getUserId()));
+            ctx.header("type", user.getType().name());
             ctx.status(200);
         } catch (AuthenticationException e) {
             ctx.status(HttpStatus.UNAUTHORIZED);
