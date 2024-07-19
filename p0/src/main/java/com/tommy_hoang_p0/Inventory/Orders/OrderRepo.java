@@ -23,7 +23,7 @@ public class OrderRepo implements Crudable<Order>{
      @Override
      public Order create(Order order) {
           try(Connection conn = ConnectionFactory.getConnectionFactory().getConnection()){
-               String sql = "INSERT INTO tommy_hoang_p0.p0_inventory (vehicle_details, customer_name, customer_phone, customer_email, quantity) VALUES (?::jsonb,?,?,?,?) RETURNING order_id";
+               String sql = "INSERT INTO tommy_hoang_p0.p0_orders (vehicle_details, customer_name, customer_phone, customer_email, quantity) VALUES (?::jsonb,?,?,?,?) RETURNING order_id";
                PreparedStatement pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
                ObjectMapper objectMapper = new ObjectMapper();
                String jsonString = objectMapper.writeValueAsString(order.getVehicleDetails());
